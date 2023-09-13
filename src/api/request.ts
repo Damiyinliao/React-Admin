@@ -1,4 +1,11 @@
-import axios, { AxiosInstance, AxiosResponse, CreateAxiosDefaults, InternalAxiosRequestConfig} from 'axios';
+import axios, {
+  AxiosInstance,
+  AxiosResponse,
+  CreateAxiosDefaults,
+  InternalAxiosRequestConfig
+} from 'axios';
+
+export type Response<T> = Promise<[boolean, T, AxiosResponse<T>]>;
 
 class Request {
   private axiosInstance: AxiosInstance;
@@ -23,13 +30,13 @@ class Request {
   // 成功响应拦截器
   private async responseSuccessInterceptor(response: AxiosResponse<any, any>): Promise<any> {
     // do something with response data
-    return Promise.resolve(response.data);
+    return Promise.resolve([false, response.data, response]);
   }
 
   // 失败响应拦截器
   private async responseFailInterceptor(error: any): Promise<any> {
     // do something with response error
-    return Promise.reject(error);
+    return Promise.reject([true, error?.response?.data]);
   }
 
   // get请求
