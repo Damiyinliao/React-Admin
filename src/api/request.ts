@@ -1,5 +1,6 @@
 import axios, {
   AxiosInstance,
+  AxiosRequestConfig,
   AxiosResponse,
   CreateAxiosDefaults,
   InternalAxiosRequestConfig
@@ -40,7 +41,7 @@ class Request {
   }
 
   // get请求
-  public get(url: string, config?: InternalAxiosRequestConfig): Promise<any> {
+  public get<T, D = any>(url: string, config?: AxiosRequestConfig<D>): Response<T> {
     return this.axiosInstance.get(url, config);
   }
 
@@ -61,7 +62,7 @@ class Request {
 }
 
 const request = new Request({
-  baseURL: 'https://localhost:7001/api',
+  // baseURL: 'http://127.0.0.1:7001', // 这里不要配置，会被vite.config.ts中的proxy代理覆盖，导致请求失败
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'
