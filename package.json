@@ -4,8 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
+    "pro": "vite --mode production",
     "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --mode development",
+    "build:pro": "tsc && vite build --mode production",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "commit": "git-cz"
@@ -19,11 +22,14 @@
     "@ant-design/icons": "^5.2.6",
     "antd": "^5.8.6",
     "axios": "^1.5.0",
+    "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",

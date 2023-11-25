@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SvgIcon from '@/components/SvgIcon';
 import LoginForm from './components/LoginForm';
 import './index.scss';
 
 const Login: React.FC = () => {
+  useEffect(() => {
+    console.log('页面渲染');
+  });
   return (
     <div className='login-page'>
       <div className="logo-wrapper">

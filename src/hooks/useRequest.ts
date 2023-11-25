@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface requestOptions {
   manual?: boolean; // 是否手动触发
-  defaultParams: any; // 默认参数
+  defaultParams?: any; // 默认参数
 }
 
 interface RequestResponse<T> {
@@ -20,7 +20,7 @@ interface RequestResponse<T> {
  * @param serviceApi 请求方法
  * @param options 参数
  */
-export function useRequest<T>(
+export default function useRequest<T>(
   serviceApi: (...args: any) => Response<T>,
   options?: requestOptions
 ): RequestResponse<T> {
@@ -35,6 +35,7 @@ export function useRequest<T>(
    * @description 手动触发
    */
   const resolveData = useCallback(async ()=>{
+    console.log('resolveData执行了');
     setLoading(true);
     // const [error, data] = await serviceApi(paramsRef.current);
     const [error, responseData] = await serviceApi(...(options?.defaultParams || []) ); // 这里的...是展开运算符，如果defaultParams是数组，那么就是把数组里面的每一项都展开，如果是对象，那么就是把对象里面的每一项都展开
@@ -47,6 +48,7 @@ export function useRequest<T>(
    * @description 刷新
    */
   const runAsync = useCallback(async (...params: any) => {
+    console.log('runAsync执行了');
     paramsRef.current = params;
     setLoading(true);
     const res = await serviceApi(...params);

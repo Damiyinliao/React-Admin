@@ -25,6 +25,11 @@ body {
   padding: 0;
 }
 
+#root {
+  /* min-width: 1280px; */
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

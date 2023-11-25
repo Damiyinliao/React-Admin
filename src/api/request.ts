@@ -46,17 +46,17 @@ class Request {
   }
 
   // post请求
-  public post(url: string, data?: any, config?: InternalAxiosRequestConfig): Promise<any> {
+  public post<T, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Response<T> {
     return this.axiosInstance.post(url, data, config);
   }
 
   // put请求
-  public put(url: string, data?: any, config?: InternalAxiosRequestConfig): Promise<any> {
+  public put<T, D = any>(url: string, data?: D, config?: InternalAxiosRequestConfig): Response<T> {
     return this.axiosInstance.put(url, data, config);
   }
 
   // delete请求
-  public delete(url: string, config?: InternalAxiosRequestConfig): Promise<any> {
+  public delete<T>(url: string, config?: InternalAxiosRequestConfig): Response<T> {
     return this.axiosInstance.delete(url, config);
   }
 }

@@ -1,0 +1,71 @@
+.ant-menu-item {
+  height: 50px !important;
+  line-height: 50px !important;
+}
+
+.ant-menu-submenu-title {
+  height: 50px !important;
+  line-height: 50px !important;
+}
+
+.ant-menu-item span {
+  transition: none !important;
+}
+
+.ant-menu-item:hover {
+  color: rgb(124, 77, 255) !important;
+  background-color: #f0e9f7 !important;
+}
+.dark .ant-menu {
+  background-color: #001529 !important;
+}
+.dark .ant-menu-submenu {
+  background-color: #001529 !important;
+}
+.dark .ant-menu-submenu-title {
+  color: #fff !important;
+}
+
+.dark .ant-menu-item {
+  background-color: #001529 !important;
+  color: #fff !important;
+}
+
+.light .ant-menu-item:hover {
+  color: rgb(124, 77, 255) !important;
+  background-color: #f0e9f7 !important;
+}
+.dark .ant-menu-item:hover {
+  color: rgb(124, 77, 255) !important;
+  background-color: #f0e9f7 !important;
+}
+
+.light .ant-layout-sider {
+  background-color: #fff !important;
+}
+.dark .ant-layout-sider {
+  background-color: #001529 !important;
+}
+
+.light .ant-menu-item-selected {
+  color: rgb(124, 77, 255) !important;
+  background-color: #f0e9f7 !important;
+}
+.dark .ant-menu-item-selected {
+  color: rgb(124, 77, 255) !important;
+  background-color: #f0e9f7 !important;
+}
+.light .ant-layout-sider-trigger {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.dark .ant-layout-sider-trigger {
+  background-color: #001529 !important;
+  color: #fff !important;
+}
+.light .ant-layout-header {
+  background-color: #fff !important;
+}
+.dark .ant-layout-header {
+  background-color: #001529 !important;
+}
