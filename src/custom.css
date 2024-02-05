@@ -69,3 +69,7 @@
 .dark .ant-layout-header {
   background-color: #001529 !important;
 }
+
+.h-full-screen {
+  height: 100vh;
+}

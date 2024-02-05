@@ -7,7 +7,7 @@ interface SvgIconProps {
   size?: string | number;
 }
 
-const SvgTcon: React.FC<SvgIconProps> = (props) => {
+const SvgIcon = (props: SvgIconProps) => {
   const { prefix = 'icon', name, color, size = 16 } = props;
   const symboldId = useMemo(() => `#${prefix}-${name}`, [prefix, name]);
   return (
@@ -17,4 +17,4 @@ const SvgTcon: React.FC<SvgIconProps> = (props) => {
   );
 };
 
-export default SvgTcon;
+export default SvgIcon;

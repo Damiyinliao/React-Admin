@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import NProgress from 'nprogress';
 
 const Loading: React.FC = () => {
-
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -11,8 +10,8 @@ const Loading: React.FC = () => {
     return () => {
       NProgress.done();
       setVisible(false);
-    }
-  }, [])
+    };
+  }, []);
 
   if (!visible) {
     return null;
@@ -22,7 +21,7 @@ const Loading: React.FC = () => {
     <div className="film-center">
       <h1 className="text-2xl">Loading...</h1>
     </div>
-  )
-}
+  );
+};
 
 export default Loading;

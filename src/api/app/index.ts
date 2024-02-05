@@ -14,7 +14,7 @@ const appService = {
   // 修改菜单
   updateMenu: (data: MenuItem) => request.put<BaseResponse<any>>('/api/menu', data),
   // 删除菜单
-  delMenu: (id: number) => request.delete<BaseResponse<any>>(`/api/menu/${id}`),
+  delMenu: (id: number) => request.delete<BaseResponse<any>>(`/api/menu/${id}`)
 };
 
 export default appService;

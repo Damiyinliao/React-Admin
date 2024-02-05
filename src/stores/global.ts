@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 interface State {
@@ -28,13 +28,13 @@ export const useGlobalStore = create<State & Action>()(
           setRefreshToken: (refreshToken: State['token']) => set({ refreshToken }, false, '设置refreshToken'),
           setCollapsed: (collapse: State['collapsed']) => set({ collapsed: collapse }, false, '设置collapsed'),
           setThemeMode: (themeMode: State['themeMode']) => set({ themeMode: themeMode }, false, '设置themeMode')
-        }
+        };
       },
       {
         name: 'globalStore',
         storage: createJSONStorage(() => localStorage)
       }
     ),
-    { name: 'globalStore'}
+    { name: 'globalStore' }
   )
-)
+);
